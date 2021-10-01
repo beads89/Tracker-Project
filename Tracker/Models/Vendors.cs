@@ -5,6 +5,8 @@ namespace Tracker.Models
   public class Vendors
   {
     public string Name {get; set;}
+
+    public string VendorDescription {get; set;}
     public int Id {get;}
     private static List<Vendors> _instances = new List<Vendors> {};
 
@@ -16,6 +18,8 @@ namespace Tracker.Models
       Id = _instances.Count;
       Orders = new List<Orders>{};
     }
+
+    public 
     public static void ClearAll()
     {
       _instances.Clear();
