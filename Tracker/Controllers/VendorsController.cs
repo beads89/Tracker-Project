@@ -7,7 +7,7 @@ namespace Tracker.Controllers
 {
     public class VendorsController : Controller
     {
-      // Initial vendor page that shows the list of vendors
+      // Initial vendor page that shows the list of all vendors
       [HttpGet("/vendors")]
       public ActionResult Index()
       {
@@ -20,18 +20,23 @@ namespace Tracker.Controllers
       {
         return View();
       }
-      // Takes the new info from vendors/new and posts it to /vendor
+      // Creates a new vendor
       [HttpPost("/vendors")]
       public ActionResult Create(string vendorName)
       {
         Vendors newVendor = new Vendors(vendorName);
         return RedirectToAction("Index");
       }
-      // Gets an id based on the vendor list
-      // [HttpGet("/vendors/{id}")]
-      // public ActionResult Show(int id)
-      // {
-
-      // }
+      // Displays a vendor based on id
+      [HttpGet("/vendors/{id}")]
+      public ActionResult Show(int id)
+      {
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        Vendors selectedVendor = Vendors.Find(id);
+        List<Orders> vendorOrders = selectedVendor.Orders;
+        model.Add("vendors", selectedVendor);
+        model.Add("orders", vendorOrders);
+        return View(model);
+      }
     }
 }
