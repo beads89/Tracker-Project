@@ -28,5 +28,18 @@ namespace Tracker.Tests
 
       Assert.AreEqual(order, results);
     }
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      string order1 = "many pies";
+      string order2 = "many more pies";
+      Orders newOrder1 = new Orders(order1);
+      Orders newOrder2 = new Orders(order2);
+      List<Orders> newOrders = new List<Orders> {newOrder1, newOrder2};
+
+      List<Orders> result = Orders.GetAll();
+
+      CollectionAssert.AreEqual(newOrders, result);
+    }
   }
 }
