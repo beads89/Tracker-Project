@@ -23,5 +23,9 @@ namespace Tracker.Models
       return _instances;
     }
 
+    public static Vendors Find(int searchId)
+    {
+      return _instances[searchId-1];
+    }
   }
 }

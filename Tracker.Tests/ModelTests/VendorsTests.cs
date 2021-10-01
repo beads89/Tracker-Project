@@ -56,5 +56,18 @@ namespace Tracker.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsSpecifiedVendorName_Vendor()
+    {
+      string vendor1 = "Taylor's Swift Bakes";
+      string vendor2 = "Vitas' Vital Varenyky";
+      Vendors newVendor1 = new Vendors(vendor1);
+      Vendors newVendor2 = new Vendors(vendor2);
+
+      Vendors result = Vendors.Find(2);
+
+      Assert.AreEqual(newVendor2, result);
+    }
   }
 }
