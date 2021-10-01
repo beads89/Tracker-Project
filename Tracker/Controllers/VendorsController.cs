@@ -22,9 +22,9 @@ namespace Tracker.Controllers
       }
       // Creates a new vendor
       [HttpPost("/vendors")]
-      public ActionResult Create(string vendorName)
+      public ActionResult Create(string vendorName, string vendorDescription)
       {
-        Vendors newVendor = new Vendors(vendorName);
+        Vendors newVendor = new Vendors(vendorName, vendorDescription);
         return RedirectToAction("Index");
       }
       // Displays a vendor based on id

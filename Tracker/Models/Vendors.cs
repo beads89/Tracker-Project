@@ -11,15 +11,15 @@ namespace Tracker.Models
     private static List<Vendors> _instances = new List<Vendors> {};
 
     public List<Orders> Orders { get; set; }
-    public Vendors(string vendorName)
+    public Vendors(string vendorName, string vendorDescription)
     {
       Name = vendorName;
+      VendorDescription = vendorDescription;
       _instances.Add(this);
       Id = _instances.Count;
       Orders = new List<Orders>{};
     }
 
-    public 
     public static void ClearAll()
     {
       _instances.Clear();
