@@ -41,5 +41,15 @@ namespace Tracker.Tests
 
       CollectionAssert.AreEqual(newOrders, result);
     }
+    [TestMethod]
+    public void GetId_ReturnsOrderId_Int()
+    {
+      string order = "ten cakes";
+      Orders newOrder = new Orders(order);
+
+      int result = newOrder.Id;
+
+      Assert.AreEqual(1, result);
+    }
   }
 }

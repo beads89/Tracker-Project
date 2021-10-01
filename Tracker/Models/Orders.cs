@@ -23,5 +23,10 @@ namespace Tracker.Models
     {
       return _instances;
     }
+
+    public static Orders Find(int searchId)
+    {
+      return _instances[searchId-1];
+    }
   }
 }
