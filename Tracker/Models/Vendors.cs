@@ -7,11 +7,14 @@ namespace Tracker.Models
     public string Name {get; set;}
     public int Id {get;}
     private static List<Vendors> _instances = new List<Vendors> {};
+
+    public List<Orders> Orders { get; set; }
     public Vendors(string vendorName)
     {
       Name = vendorName;
       _instances.Add(this);
       Id = _instances.Count;
+      Orders = new List<Orders>{};
     }
     public static void ClearAll()
     {
@@ -26,6 +29,11 @@ namespace Tracker.Models
     public static Vendors Find(int searchId)
     {
       return _instances[searchId-1];
+    }
+
+    public void AddOrder(Orders orders)
+    {
+      Orders.Add(orders);
     }
   }
 }

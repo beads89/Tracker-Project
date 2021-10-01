@@ -69,5 +69,20 @@ namespace Tracker.Tests
 
       Assert.AreEqual(newVendor2, result);
     }
+
+    [TestMethod]
+    public void AddOrder_PlaceOrderWithCorrectVendor_OrderList()
+    {
+      string order = "5 fab funnel cakes";
+      Orders newOrder = new Orders(order);
+      List<Orders> newList = new List<Orders> {newOrder};
+      string vendor = "Cakemart's Tarts";
+      Vendors newVendor = new Vendors(vendor);
+      newVendor.AddOrder(newOrder);
+
+      List<Orders> result = newVendor.Orders;
+
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
