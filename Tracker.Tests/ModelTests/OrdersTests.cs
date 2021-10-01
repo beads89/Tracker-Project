@@ -51,5 +51,17 @@ namespace Tracker.Tests
 
       Assert.AreEqual(1, result);
     }
+    [TestMethod]
+    public void Find_ReturnsSpecificOrders_Orders()
+    {
+      string order1 = "pancakes";
+      string order2 = "waffles";
+      Orders newOrder1 = new Orders(order1);
+      Orders newOrder2 = new Orders(order2);
+
+      Orders result = Orders.Find(2);
+
+      Assert.AreEqual(newOrder2, result);
+    }
   }
 }
