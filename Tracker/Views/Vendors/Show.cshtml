@@ -1,2 +1,12 @@
 @* Page to show all the vendors orders *@
 
+@using Tracker.Models;
+
+<h2>Orders for current Vendor:</h2>
+
+<ol>
+@foreach (Orders orders in @Model["orders"])
+{
+  <li><a href='/vendors/@Model["vendors"].Id/orders/@orders.Id'>@orders.Contents</a></li>
+}
+</ol>
