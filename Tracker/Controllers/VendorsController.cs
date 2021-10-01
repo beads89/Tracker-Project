@@ -44,7 +44,7 @@ namespace Tracker.Controllers
         Dictionary<string, object> model = new Dictionary<string, object>();
         Vendors foundVendor = Vendors.Find(vendorId);
         Orders newOrder = new Orders(orderContents);
-        foundVendor.AddItem(newOrder);
+        foundVendor.AddOrder(newOrder);
         List<Orders> vendorOrders = foundVendor.Orders;
         model.Add("orders", vendorOrders);
         model.Add("vendors", foundVendor);

@@ -3,3 +3,18 @@
 @* initial ..:5000/vendors page that will link to either "vendors/new" to create a new vendor, "vendors/{id}/orders" to view orders for a particular vendor, or back to the homepage ""..:5000/" *@
 
 @using Tracker.Models;
+
+<h1>Current Vendors</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>None.</h3>
+}
+
+@foreach (Vendors vendors in Model)
+{
+  <h3><a href="/vendors/@vendors.Id">@vendors.Name</a></h3>
+}
+
+<p><a href="/">Home</a></p>
+<p><a href="/vendors/new">Add a new vendor.</a></p>
