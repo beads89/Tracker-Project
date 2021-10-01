@@ -3,7 +3,7 @@
 
 @using Tracker.Models;
 
-<h2>Orders for current Vendor: </h2>
+<h2>Orders for Vendor: @Model["vendors"].Name </h2>
 
 <ol>
 @foreach (Orders orders in @Model["orders"])
