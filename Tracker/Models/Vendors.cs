@@ -4,13 +4,12 @@ namespace Tracker.Models
 {
   public class Vendors
   {
-    public string Description {get; set;}
+    public string Name {get; set;}
     public int Id {get;}
     private static List<Vendors> _instances = new List<Vendors> {};
-
-    public Vendors(string description)
+    public Vendors(string vendorName)
     {
-      Description = description;
+      Name = vendorName;
       _instances.Add(this);
       Id = _instances.Count;
     }
