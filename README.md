@@ -23,9 +23,9 @@ _This application will let our fictional friend, Pierre, keep track of his sales
 * _Clone or download repository._
 * _If downloaded, extract contents to desired folder._
 * _Navigate to and open Tracker.Solution directory in Code editor._
-* _Using the terminal, navigate to Tracker.Solution/Tracker.Tests and run "dotnet restore" to obtain any missing files._
+* _Using the terminal, navigate to Tracker.Solution/Tracker.Tests and run "dotnet restore"._
 * _Using the terminal, navigate to Tracker.Solution/Tracker and run "dotnet build" to build the application._
-* _In the previous directory, run "dotnet run" to compile and run the application._
+* _In the same directory, run "dotnet run" to compile and run the application._
 * _In your web browser, type the following URL to open the application "http://localhost:5000/" or "http://localhost:5001/"._
 
 *  To run tests, navigate to Tracker.Solution/Tracker.Tests and run "dotnet test" in the terminal.
@@ -38,7 +38,7 @@ _This application will let our fictional friend, Pierre, keep track of his sales
 
 ## License
 
-_MIT License_
+MIT License
 
 Copyright(c) 2021 Brandon Eads
 
