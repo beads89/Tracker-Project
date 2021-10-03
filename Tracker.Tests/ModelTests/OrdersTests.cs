@@ -15,15 +15,18 @@ namespace Tracker.Tests
     [TestMethod]
     public void OrdersConstructor_CreatesNewOrder_Order()
     {
-      Orders newOrder = new Orders("5 fab fennel cakes");
+      Orders newOrder = new Orders("c", "d", "e", 5);
       Assert.AreEqual(typeof(Orders), newOrder.GetType());
     }
     [TestMethod]
     public void GetOrder_ReturnsDescriptionOfOrder_String()
     {
       string order = "many pies";
+      string description = "pies of many";
+      string date = "jan";
+      int price = 15;
 
-      Orders newOrder = new Orders(order);
+      Orders newOrder = new Orders(order, description, date, price);
       string results = newOrder.Contents;
 
       Assert.AreEqual(order, results);
@@ -32,9 +35,15 @@ namespace Tracker.Tests
     public void GetAll_ReturnsOrders_OrderList()
     {
       string order1 = "many pies";
+      string description1 = "pies of many";
+      string date1 = "jan";
+      int price1 = 15;
       string order2 = "many more pies";
-      Orders newOrder1 = new Orders(order1);
-      Orders newOrder2 = new Orders(order2);
+      string description2 = "pies of many more";
+      string date2 = "feb";
+      int price2 = 20;
+      Orders newOrder1 = new Orders(order1, description1, date1, price1);
+      Orders newOrder2 = new Orders(order2, description2, date2, price2);
       List<Orders> newOrders = new List<Orders> {newOrder1, newOrder2};
 
       List<Orders> result = Orders.GetAll();
@@ -45,7 +54,10 @@ namespace Tracker.Tests
     public void GetId_ReturnsOrderId_Int()
     {
       string order = "ten cakes";
-      Orders newOrder = new Orders(order);
+      string description = "pies of many";
+      string date = "jan";
+      int price = 15;
+      Orders newOrder = new Orders(order, description, date, price);
 
       int result = newOrder.Id;
 
@@ -55,9 +67,15 @@ namespace Tracker.Tests
     public void Find_ReturnsSpecificOrders_Orders()
     {
       string order1 = "pancakes";
+      string description1 = "pies of many";
+      string date1 = "jan";
+      int price1 = 15;
       string order2 = "waffles";
-      Orders newOrder1 = new Orders(order1);
-      Orders newOrder2 = new Orders(order2);
+      string description2 = "pies of many more";
+      string date2 = "feb";
+      int price2 = 20;
+      Orders newOrder1 = new Orders(order1, description1, date1, price1);
+      Orders newOrder2 = new Orders(order2, description2, date2, price2);
 
       Orders result = Orders.Find(2);
 
