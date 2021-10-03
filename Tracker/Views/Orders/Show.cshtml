@@ -6,6 +6,9 @@
 <h1>Order Details</h1>
 
 
-<h3>@Model["orders"].Contents</h2>
+<p>Order name: @Model["orders"].Contents</p>
+<p>Description: @Model["orders"].OrderDescription</p>
+<p>Date placed: @Model["orders"].OrderDate</p>
+<p>Price: $@Model["orders"].OrderPrice</p>
 
 <p><a href='/vendors/@Model["vendors"].Id/'>Back</a> to all orders for @Model["vendors"].Name.</p>
