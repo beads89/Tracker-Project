@@ -79,8 +79,11 @@ namespace Tracker.Tests
     [TestMethod]
     public void AddOrder_PlaceOrderWithCorrectVendor_OrderList()
     {
-      string order = "5 fab funnel cakes";
-      Orders newOrder = new Orders(order);
+      string order = "cakes for kate";
+      string description = "5 funnel cakes";
+      string date = "jan 15th";
+      int price = 15;
+      Orders newOrder = new Orders(order, description, date, price);
       List<Orders> newList = new List<Orders> {newOrder};
       string vendor = "Cakemart's Tarts";
       string vendorDescription = "Swifties";

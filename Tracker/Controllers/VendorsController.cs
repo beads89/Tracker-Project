@@ -39,11 +39,11 @@ namespace Tracker.Controllers
         return View(model);
       }
       [HttpPost("/vendors/{vendorId}/orders")]
-      public ActionResult Create(int vendorId, string orderContents)
+      public ActionResult Create(int vendorId, string orderContents, string orderDescription, string orderDate, int orderPrice)
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
         Vendors foundVendor = Vendors.Find(vendorId);
-        Orders newOrder = new Orders(orderContents);
+        Orders newOrder = new Orders(orderContents, orderDescription, orderDate, orderPrice);
         foundVendor.AddOrder(newOrder);
         List<Orders> vendorOrders = foundVendor.Orders;
         model.Add("orders", vendorOrders);

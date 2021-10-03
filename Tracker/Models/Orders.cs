@@ -4,12 +4,19 @@ namespace Tracker.Models
 {
   public class Orders
   {
+    //  Add description, date, price. possibly to orders? look at vendors for ref
     public string Contents {get; set;}
+    public string OrderDescription {get; set;}
+    public string OrderDate {get; set;}
+    public int OrderPrice {get; set;}
     public int Id {get;}
     private static List<Orders> _instances = new List<Orders> {};
-    public Orders(string contents)
+    public Orders(string contents, string orderDescription, string orderDate, int orderPrice)
     {
       Contents = contents;
+      OrderDescription = orderDescription;
+      OrderDate = orderDate;
+      OrderPrice = orderPrice;
       _instances.Add(this);
       Id = _instances.Count;
 
