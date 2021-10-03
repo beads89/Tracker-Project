@@ -1,10 +1,6 @@
- @* localhost:5000/vendors/{id}/orders/new *@
- @* Page to add a new order via fill out form *@
- @* Routed from "/vendors/{id}/orders". Will have two buttons. One for SUBMIT that takes back to /orders and another for CANCEL that takes back to /orders without adding *@
+<h1>Add a new order for @Model.Name</h1>
 
- <h1>Add a new order for @Model.Name</h1>
-
- <form action="/vendors/@Model.Id/orders" method="POST">
+<form action="/vendors/@Model.Id/orders" method="POST">
   <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
   <label for="orderContents">Order Name:</label>
   <input id="orderContents" name="orderContents" type="text">
@@ -15,6 +11,6 @@
   <label for="orderPrice">Price:</label>
   <input id="orderPrice" name="orderPrice" type="number" min="0">
   <button type="submit">Add Order</button>
- </form>
+</form>
 
- <p><a href="/vendors/@Model.Id">Cancel</a> order creation and go back to order list.</p>
+<p><a href="/vendors/@Model.Id">Cancel</a> order creation and go back to order list.</p>

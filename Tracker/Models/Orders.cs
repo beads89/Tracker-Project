@@ -4,7 +4,6 @@ namespace Tracker.Models
 {
   public class Orders
   {
-    //  Add description, date, price. possibly to orders? look at vendors for ref
     public string Contents {get; set;}
     public string OrderDescription {get; set;}
     public string OrderDate {get; set;}
